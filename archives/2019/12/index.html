@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   
-  <title>categories | hzyhbk</title>
+  <title>Archives: 2019/12 | hzyhbk</title>
   
   
 
@@ -46,7 +46,7 @@
   
   
   <div class="cover-wrapper">
-    <cover class="cover page half">
+    <cover class="cover  half">
       
         
   <h1 class="title">hzyhbk</h1>
@@ -183,10 +183,22 @@
   <div class="l_body">
     <div class='body-wrapper'>
       <div class="l_main">
-  
-
-  <article id="page" class="post white-box article-type-page" itemscope itemprop="blogPost">
+	
+		
+  <section class="post-list">
     
+      
+        
+          
+        
+      
+    
+    
+      
+        
+          <div class="post-wrapper">
+            <article class="post reveal ">
+  
 
 
   <section class="meta">
@@ -195,13 +207,11 @@
     <div class="meta" id="header-meta">
       
         
-  
-    <h1 class="title">
-      <a href="/categories/index.html">
-        categories
-      </a>
-    </h1>
-  
+  <h2 class="title">
+    <a href="/2019/12/28/start/echarts-for-react修改点击图例事件/">
+      echarts-for-react 修改点击图例事件
+    </a>
+  </h2>
 
 
       
@@ -226,6 +236,14 @@
         
           
             
+  
+  <div class="new-meta-item category">
+    <a href="/categories/web前端/" rel="nofollow">
+      <i class="fas fa-folder-open" aria-hidden="true"></i>
+      <p>web前端</p>
+    </a>
+  </div>
+
 
           
         
@@ -248,34 +266,50 @@
   </section>
 
 
-    <section class="article typo">
-      <div class="article-entry" itemprop="articleBody">
+  <section class="article typo">
+    <div class="article-entry" itemprop="articleBody">
+      <p><strong>需求</strong>：点击图例，则选中该项，将其他项置灰；再次点击，恢复选中所有选项</p>
+<p><strong>做法</strong>：监听下<code>legendselectchanged</code>事件，用一个变量来保存上次点击的图例的名字，</p>
+<ul>
+<li>如果点击的图例名称和保存的一致，说明是再次点击，应该恢复所有选项，把所有图例都置为 true;</li>
+<li>如果点击的图例名称和保存的不一致，说明点击了另外的图例，这是需要更新变量，并且把这次点击的图例的selected设置为true，其他的设置为false。</li>
+</ul>
+<p><strong>坑点</strong>：如果在<code>legendselectchanged</code>里调用 echarts 的 <a href="https://www.echartsjs.com/zh/api.html#action.legend.legendToggleSelect" target="_blank" rel="noopener">dispatchActions</a>，会陷入循环调用，如果还是想调用 <code>dispatchActions</code>方法，可参考这篇<a href="https://segmentfault.com/q/1010000014133645" target="_blank" rel="noopener">文章</a>。我就直接调用setOption了。</p>
+<p>监听 legendselectchanged 事件代码如下：<br>
+      
+        <div class="readmore">
+          <a href="/2019/12/28/start/echarts-for-react修改点击图例事件/" class="flat-box">
+            <i class="fas fa-book-open fa-fw" aria-hidden="true"></i>
+            阅读全文
+          </a>
+        </div>
+      
+    </p></div>
+    
+      <div class="full-width auto-padding tags">
+        
+          <a href="/tags/echarts-for-react/" rel="nofollow"><i class="fas fa-tag fa-fw"></i> echarts-for-react</a>
         
       </div>
+    
+  </section>
+</article>
+
+          </div>
+        
       
-      
-      
-    </section>
-  </article>
-
-
-
-  <!-- 显示推荐文章和评论 -->
-
-
+    
+  </section>
+  
+    
+    <!-- 根据主题中的设置决定是否在archive中针对摘要部分的MathJax公式加载mathjax.js文件 -->
+    
+    
 
   
 
 
-
-
-
-
-<!-- 根据页面mathjax变量决定是否加载MathJax数学公式js -->
-
-
-
-
+	
 </div>
 <aside class="l_side">
   
@@ -354,13 +388,43 @@
         
           
           
+            
+              <section class="widget plain">
+  
+<header class="pure">
+  <div><i class="fab fa-github fa-fw fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;<a href="https://github.com/chvin/react-tetris" rel="external nofollow noopener noreferrer" target="_blank">chvin/react-tetris</a></div>
+  
+    <a class="rightBtn" rel="external nofollow noopener noreferrer" target="_blank" href="https://chvin.github.io/react-tetris/" title="https://chvin.github.io/react-tetris/">
+    <i class="fas fa-expand-arrows-alt fa-fw fa-fw"></i></a>
+  
+</header>
+
+  <div class="content pure">
+    <div class="widget-tetris"><iframe src="/react-tetris"></iframe></div>
+  </div>
+</section>
+
+            
+          
         
           
           
-            
-              
-
-            
+        
+          
+          
+        
+          
+          
+        
+      
+        
+          
+          
+        
+          
+          
+        
+          
           
         
           
@@ -465,40 +529,6 @@
           
         
       
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-      
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-      
     
 
   
@@ -548,6 +578,14 @@
   </div>
 </footer>
 <script>setLoadingBarProgress(80);</script>
+
+
+
+
+	<!-- 根据主题中的设置决定是否在archive中针对摘要部分的MathJax公式加载mathjax.js文件 -->
+	
+
+	
 
 
       <script>setLoadingBarProgress(60);</script>
