@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   
-  <title>Category: web前端 | hzyhbk</title>
+  <title>Hello World | hzyhbk</title>
   
   
 
@@ -45,43 +45,7 @@
 <body>
   
   
-  <div class="cover-wrapper">
-    <cover class="cover  half">
-      
-        
-  <img class="logo" src="/images/logo2.png">
-
-
-  <div class="m_search">
-    <form name="searchform" class="form u-search-form">
-      <input type="text" class="input u-search-input" placeholder>
-      <i class="icon fas fa-search fa-fw"></i>
-    </form>
-  </div>
-
-<div class="menu navgation">
-  <ul class="h-list">
-    
-      
-        <li>
-          <a class="nav home" href="/" id="home">
-            <i class="fas fa-home fa-fw fa-fw"></i>&nbsp;博文
-          </a>
-        </li>
-      
-        <li>
-          <a class="nav home" href="/about/" rel="nofollow" id="about">
-            <i class="fas fa-info-circle fa-fw"></i>&nbsp;关于
-          </a>
-        </li>
-      
-    
-  </ul>
-</div>
-
-      
-    </cover>
-    <header class="l_header pure">
+  <header class="l_header pure">
   <div id="loading-bar-wrapper">
     <div id="loading-bar" class="pure"></div>
   </div>
@@ -177,26 +141,15 @@
 	</aside>
 <script>setLoadingBarProgress(40);</script>
 
-  </div>
 
 
-  <div class="l_body">
+  <div class="l_body nocover">
     <div class='body-wrapper'>
-      
-<div class="l_main">
+      <div class="l_main">
   
+
+  <article id="post" class="post white-box article-type-post" itemscope itemprop="blogPost">
     
-      
-  <section class="post-list">
-    
-      
-        
-          
-        
-          
-            <div class="post-wrapper">
-              <article class="post reveal ">
-  
 
 
   <section class="meta">
@@ -205,11 +158,13 @@
     <div class="meta" id="header-meta">
       
         
-  <h2 class="title">
-    <a href="/start/hello-world/">
-      Hello World
-    </a>
-  </h2>
+  
+    <h1 class="title">
+      <a href="/start/hello-world/">
+        Hello World
+      </a>
+    </h1>
+  
 
 
       
@@ -253,13 +208,6 @@
         
           
             
-  <div class="new-meta-item top-post">
-    <a class="notlink">
-      <i class="fas fa-angle-double-up" aria-hidden="true"></i>
-      <p>置顶</p>
-    </a>
-  </div>
-
 
           
         
@@ -271,157 +219,150 @@
   </section>
 
 
-  <section class="article typo">
-    <div class="article-entry" itemprop="articleBody">
-      <blockquote>
+    <section class="article typo">
+      <div class="article-entry" itemprop="articleBody">
+        <blockquote>
 <p>Hello World 中文意思是『你好,世界』。因为《The C Programming Language》中使用它做为第一个演示程序，非常著名，所以后来的程序员在学习编程或进行设备调试时延续了这一习惯。 ——百度百科</p>
 </blockquote>
 <p>我自己开始学写代码的时候，写的第一段代码也是Hello World, 所以我把它作为博客的第一篇文章。</p>
 <p>控制台版本<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(<span class="string">'Hello World'</span>)</span><br></pre></td></tr></table></figure></p>
-      
-        <div class="readmore">
-          <a href="/start/hello-world/" class="flat-box">
-            <i class="fas fa-book-open fa-fw" aria-hidden="true"></i>
-            阅读全文
-          </a>
-        </div>
-      
-    </div>
-    
-      <div class="full-width auto-padding tags">
-        
-          <a href="/tags/hello-world/" rel="nofollow"><i class="fas fa-tag fa-fw"></i> hello-world</a>
-        
+<a id="more"></a>
+<p>React函数式组件版本<br><figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> &lt;div&gt;Hello World&lt;/div&gt;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>React类组件版本<br><figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Demo</span> </span>&#123;</span><br><span class="line">  render() &#123;</span><br><span class="line">    <span class="keyword">return</span> &lt;div&gt;Hello World&lt;/div&gt;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+
       </div>
-    
-  </section>
-</article>
-
-            </div>
-          
-        
       
-    
-    
+      
+        <br>
+        
+
+
+  <section class="meta" id="footer-meta">
+    <div class="new-meta-box">
       
         
-          <div class="post-wrapper">
-            <article class="post reveal ">
-  
-
-
-  <section class="meta">
-    
-    
-    <div class="meta" id="header-meta">
-      
-        
-  <h2 class="title">
-    <a href="/start/echarts-for-react修改点击图例事件/">
-      echarts-for-react 修改点击图例事件
-    </a>
-  </h2>
-
-
-      
-      <div class="new-meta-box">
-        
-          
-        
-          
-            
-
-          
-        
-          
-            <div class="new-meta-item date">
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2019-12-28T18:19:14+08:00">
   <a class="notlink">
-    <i class="fas fa-calendar-alt" aria-hidden="true"></i>
-    <p>2019-12-28</p>
+    <i class="fas fa-clock" aria-hidden="true"></i>
+    <p>更新于 2019年12月28日</p>
   </a>
 </div>
 
-          
         
-          
-            
-  
-  <div class="new-meta-item category">
-    <a href="/categories/web前端/" rel="nofollow">
-      <i class="fas fa-folder-open" aria-hidden="true"></i>
-      <p>web前端</p>
-    </a>
-  </div>
-
-
-          
-        
-          
-            
-  
-
-          
-        
-          
-            
-
-          
-        
-      </div>
       
-        <hr>
+        
+          
+  
+  <div class="new-meta-item meta-tags"><a class="tag" href="/tags/hello-world/" rel="nofollow"><i class="fas fa-tag" aria-hidden="true"></i><p>hello-world</p></a></div>
+
+
+        
+      
+        
+          
+  <div class="new-meta-item share -mob-share-list">
+  <div class="-mob-share-list share-body">
+    
+      
+        <a class="-mob-share-qq" title="QQ好友" rel="external nofollow noopener noreferrer" href="http://connect.qq.com/widget/shareqq/index.html?url=http://hzyhbk.github.io/start/hello-world/&title=Hello World | hzyhbk&summary=
+Hello World 中文意思是『你好,世界』。因为《The C Programming Language》中使用它做为第一个演示程序，非常著名，所以后来的程序员在学习编程或进行设备调试时延续了这一习惯。 ——百度百科
+
+我自己开始学写代码的时候，写的第一段代码也是Hello World, 所以我把它作为博客的第一篇文章。
+控制台版本1console.log('Hello World')">
+          
+            <img src="https://cdn.jsdelivr.net/gh/xaoxuu/assets@19.1.9/logo/128/qq.png">
+          
+        </a>
+      
+    
+      
+        <a class="-mob-share-qzone" title="QQ空间" rel="external nofollow noopener noreferrer" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=http://hzyhbk.github.io/start/hello-world/&title=Hello World | hzyhbk&summary=
+Hello World 中文意思是『你好,世界』。因为《The C Programming Language》中使用它做为第一个演示程序，非常著名，所以后来的程序员在学习编程或进行设备调试时延续了这一习惯。 ——百度百科
+
+我自己开始学写代码的时候，写的第一段代码也是Hello World, 所以我把它作为博客的第一篇文章。
+控制台版本1console.log('Hello World')">
+          
+            <img src="https://cdn.jsdelivr.net/gh/xaoxuu/assets@19.1.9/logo/128/qzone.png">
+          
+        </a>
+      
+    
+      
+        <a class="-mob-share-weibo" title="微博" rel="external nofollow noopener noreferrer" href="http://service.weibo.com/share/share.php?url=http://hzyhbk.github.io/start/hello-world/&title=Hello World | hzyhbk&summary=
+Hello World 中文意思是『你好,世界』。因为《The C Programming Language》中使用它做为第一个演示程序，非常著名，所以后来的程序员在学习编程或进行设备调试时延续了这一习惯。 ——百度百科
+
+我自己开始学写代码的时候，写的第一段代码也是Hello World, 所以我把它作为博客的第一篇文章。
+控制台版本1console.log('Hello World')">
+          
+            <img src="https://cdn.jsdelivr.net/gh/xaoxuu/assets@19.1.9/logo/128/weibo.png">
+          
+        </a>
+      
+    
+  </div>
+</div>
+
+
+
+        
       
     </div>
   </section>
 
 
-  <section class="article typo">
-    <div class="article-entry" itemprop="articleBody">
-      <p><strong>需求</strong>：点击图例，则选中该项，将其他项置灰；再次点击，恢复选中所有选项</p>
-<p><strong>做法</strong>：监听下<code>legendselectchanged</code>事件，用一个变量来保存上次点击的图例的名字，</p>
-<ul>
-<li>如果点击的图例名称和保存的一致，说明是再次点击，应该恢复所有选项，把所有图例都置为 true;</li>
-<li>如果点击的图例名称和保存的不一致，说明点击了另外的图例，这是需要更新变量，并且把这次点击的图例的selected设置为true，其他的设置为false。</li>
-</ul>
-<p><strong>坑点</strong>：如果在<code>legendselectchanged</code>里调用 echarts 的 <a href="https://www.echartsjs.com/zh/api.html#action.legend.legendToggleSelect" target="_blank" rel="noopener">dispatchActions</a>，会陷入循环调用，如果还是想调用 <code>dispatchActions</code>方法，可参考这篇<a href="https://segmentfault.com/q/1010000014133645" target="_blank" rel="noopener">文章</a>。我就直接调用setOption了。</p>
-<p>监听 legendselectchanged 事件代码如下：<br>
       
-        <div class="readmore">
-          <a href="/start/echarts-for-react修改点击图例事件/" class="flat-box">
-            <i class="fas fa-book-open fa-fw" aria-hidden="true"></i>
-            阅读全文
-          </a>
-        </div>
       
-    </p></div>
-    
-      <div class="full-width auto-padding tags">
-        
-          <a href="/tags/echarts-for-react/" rel="nofollow"><i class="fas fa-tag fa-fw"></i> echarts-for-react</a>
-        
-      </div>
-    
-  </section>
-</article>
-
+          <div class="prev-next">
+              
+                  <section class="prev">
+                      <span class="art-item-left">
+                          <h6><i class="fas fa-chevron-left" aria-hidden="true"></i>&nbsp;上一页</h6>
+                          <h4>
+                              <a href="/start/echarts-for-react修改点击图例事件/" rel="prev" title="echarts-for-react 修改点击图例事件">
+                                
+                                    echarts-for-react 修改点击图例事件
+                                
+                              </a>
+                          </h4>
+                          
+                              
+                              <h6 class="tags">
+                                  <a class="tag" href="/tags/echarts-for-react/"><i class="fas fa-tag fa-fw" aria-hidden="true"></i> echarts-for-react</a>
+                              </h6>
+                          
+                      </span>
+                  </section>
+              
+              
           </div>
-        
       
-        
-      
-    
-  </section>
-  
-    
-    <!-- 根据主题中的设置决定是否在archive中针对摘要部分的MathJax公式加载mathjax.js文件 -->
-    
-    
+    </section>
+  </article>
+
+
+
+  <!-- 显示推荐文章和评论 -->
+
+
 
   
 
 
-    
-  
+
+
+
+
+<!-- 根据页面mathjax变量决定是否加载MathJax数学公式js -->
+
+
+
+  <script>
+    window.subData = {
+      title: 'Hello World',
+      tools: true
+    }
+  </script>
+
 
 </div>
 <aside class="l_side">
@@ -501,43 +442,13 @@
         
           
           
+        
+          
+          
             
-              <section class="widget plain">
-  
-<header class="pure">
-  <div><i class="fab fa-github fa-fw fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;<a href="https://github.com/chvin/react-tetris" rel="external nofollow noopener noreferrer" target="_blank">chvin/react-tetris</a></div>
-  
-    <a class="rightBtn" rel="external nofollow noopener noreferrer" target="_blank" href="https://chvin.github.io/react-tetris/" title="https://chvin.github.io/react-tetris/">
-    <i class="fas fa-expand-arrows-alt fa-fw fa-fw"></i></a>
-  
-</header>
-
-  <div class="content pure">
-    <div class="widget-tetris"><iframe src="/react-tetris"></iframe></div>
-  </div>
-</section>
+              
 
             
-          
-        
-          
-          
-        
-          
-          
-        
-          
-          
-        
-      
-        
-          
-          
-        
-          
-          
-        
-          
           
         
           
@@ -641,6 +552,40 @@
 
 
             
+          
+        
+      
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+      
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
           
         
       
