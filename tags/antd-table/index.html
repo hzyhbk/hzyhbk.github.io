@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   
-  <title>Tag: echarts-for-react | hzyhbk</title>
+  <title>Tag: antd-table | hzyhbk</title>
   
   
 
@@ -210,8 +210,8 @@
       
         
   <h2 class="title">
-    <a href="/start/echarts-for-react修改点击图例事件/">
-      echarts-for-react 修改点击图例事件
+    <a href="/start/export-excel/">
+      antd表格合并单元格，并且支持导出excel
     </a>
   </h2>
 
@@ -230,7 +230,7 @@
             <div class="new-meta-item date">
   <a class="notlink">
     <i class="fas fa-calendar-alt" aria-hidden="true"></i>
-    <p>2019-12-28</p>
+    <p>2020-01-07</p>
   </a>
 </div>
 
@@ -270,27 +270,25 @@
 
   <section class="article typo">
     <div class="article-entry" itemprop="articleBody">
-      <p><strong>需求</strong>：点击图例，则选中该项，将其他项置灰；再次点击，恢复选中所有选项</p>
-<p><strong>做法</strong>：监听下<code>legendselectchanged</code>事件，用一个变量来保存上次点击的图例的名字，</p>
-<ul>
-<li>如果点击的图例名称和保存的一致，说明是再次点击，应该恢复所有选项，把所有图例都置为 true;</li>
-<li>如果点击的图例名称和保存的不一致，说明点击了另外的图例，这是需要更新变量，并且把这次点击的图例的selected设置为true，其他的设置为false。</li>
-</ul>
-<p><strong>坑点</strong>：如果在<code>legendselectchanged</code>里调用 echarts 的 <a href="https://www.echartsjs.com/zh/api.html#action.legend.legendToggleSelect" target="_blank" rel="noopener">dispatchActions</a>，会陷入循环调用，如果还是想调用 <code>dispatchActions</code>方法，可参考这篇<a href="https://segmentfault.com/q/1010000014133645" target="_blank" rel="noopener">文章</a>。我就直接调用setOption了。</p>
-<p>监听 legendselectchanged 事件代码如下：<br>
+      <p>最近接到个报表的需求，需要展示<strong>合并单元格的表格</strong>，并且还要支持<strong>导出excel</strong>。粗略一看，不就两个功能嘛，但是在实现的过程中发现其实要做的还是挺多的，所以在这里记录分享一下。</p>
+<h2 id="一、合并单元格的实现"><a href="#一、合并单元格的实现" class="headerlink" title="一、合并单元格的实现"></a>一、合并单元格的实现</h2>
       
         <div class="readmore">
-          <a href="/start/echarts-for-react修改点击图例事件/" class="flat-box">
+          <a href="/start/export-excel/" class="flat-box">
             <i class="fas fa-book-open fa-fw" aria-hidden="true"></i>
             阅读全文
           </a>
         </div>
       
-    </p></div>
+    </div>
     
       <div class="full-width auto-padding tags">
         
-          <a href="/tags/echarts-for-react/" rel="nofollow"><i class="fas fa-tag fa-fw"></i> echarts-for-react</a>
+          <a href="/tags/antd-table/" rel="nofollow"><i class="fas fa-tag fa-fw"></i> antd-table</a>
+        
+          <a href="/tags/js-xlsx/" rel="nofollow"><i class="fas fa-tag fa-fw"></i> js-xlsx</a>
+        
+          <a href="/tags/react/" rel="nofollow"><i class="fas fa-tag fa-fw"></i> react</a>
         
       </div>
     
