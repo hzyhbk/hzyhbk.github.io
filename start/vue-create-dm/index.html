@@ -1,0 +1,1045 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  
+  <title>使用函数优雅地创建弹框抽屉 | hzyhbk</title>
+  
+  
+
+  
+  <link rel="alternate" href="/atom.xml" title="hzyhbk">
+  
+
+  <meta name="HandheldFriendly" content="True">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <!-- meta -->
+  
+
+  <!-- link -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css">
+  
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/node-waves@0.7.6/dist/waves.min.css">
+  
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.10.1/css/all.min.css">
+  
+
+  
+
+  
+    <link rel="stylesheet" href="/style.css">
+  
+
+  <script>
+    function setLoadingBarProgress(num) {
+      document.getElementById('loading-bar').style.width=num+"%";
+    }
+  </script>
+
+  
+  
+</head>
+
+<body>
+  
+  
+  <div class="cover-wrapper">
+    <cover class='cover post half'>
+      
+        
+  <img class='logo' src='/images/logo2.png'/>
+
+
+  <div class="m_search">
+    <form name="searchform" class="form u-search-form">
+      <input type="text" class="input u-search-input" placeholder="" />
+      <i class="icon fas fa-search fa-fw"></i>
+    </form>
+  </div>
+
+<div class='menu navgation'>
+  <ul class='h-list'>
+    
+      
+        <li>
+          <a class="nav home" href="/"
+            
+            
+            id="home">
+            <i class='fas fa-home fa-fw fa-fw'></i>&nbsp;博文
+          </a>
+        </li>
+      
+        <li>
+          <a class="nav home" href="/about/"
+            
+              rel="nofollow"
+            
+            
+            id="about">
+            <i class='fas fa-info-circle fa-fw'></i>&nbsp;关于
+          </a>
+        </li>
+      
+    
+  </ul>
+</div>
+
+      
+    </cover>
+    <header class="l_header pure">
+  <div id="loading-bar-wrapper">
+    <div id="loading-bar" class="pure"></div>
+  </div>
+
+	<div class='wrapper'>
+		<div class="nav-main container container--flex">
+      <a class="logo flat-box" href='/' >
+        
+          <img class='logo' src='/images/logo.png'/>
+        
+      </a>
+			<div class='menu navgation'>
+				<ul class='h-list'>
+          
+  					
+  						<li>
+								<a class="nav flat-box" href="/about"
+                  
+                  
+                  id="about">
+									<i class='fas fa-grin fa-fw'></i>&nbsp;关于我
+								</a>
+							</li>
+      			
+  						<li>
+								<a class="nav flat-box" href="/categories/"
+                  
+                    rel="nofollow"
+                  
+                  
+                  id="categories">
+									<i class='fas fa-folder-open fa-fw'></i>&nbsp;分类
+								</a>
+							</li>
+      			
+  						<li>
+								<a class="nav flat-box" href="/tags/"
+                  
+                    rel="nofollow"
+                  
+                  
+                  id="tags">
+									<i class='fas fa-hashtag fa-fw'></i>&nbsp;标签
+								</a>
+							</li>
+      			
+  						<li>
+								<a class="nav flat-box" href="/archives/"
+                  
+                    rel="nofollow"
+                  
+                  
+                  id="archives">
+									<i class='fas fa-archive fa-fw'></i>&nbsp;归档
+								</a>
+							</li>
+      			
+      		
+				</ul>
+			</div>
+
+			
+				<div class="m_search">
+					<form name="searchform" class="form u-search-form">
+						<input type="text" class="input u-search-input" placeholder="搜索" />
+						<i class="icon fas fa-search fa-fw"></i>
+					</form>
+				</div>
+			
+			<ul class='switcher h-list'>
+				
+					<li class='s-search'><a class="fas fa-search fa-fw" href='javascript:void(0)'></a></li>
+				
+				<li class='s-menu'><a class="fas fa-bars fa-fw" href='javascript:void(0)'></a></li>
+			</ul>
+		</div>
+
+		<div class='nav-sub container container--flex'>
+			<a class="logo flat-box"></a>
+			<ul class='switcher h-list'>
+				<li class='s-comment'><a class="flat-btn fas fa-comments fa-fw" href='javascript:void(0)'></a></li>
+        
+          <li class='s-toc'><a class="flat-btn fas fa-list fa-fw" href='javascript:void(0)'></a></li>
+        
+			</ul>
+		</div>
+	</div>
+</header>
+	<aside class="menu-phone">
+    <header>
+		<nav class="menu navgation">
+      <ul>
+        
+          
+            <li>
+							<a class="nav flat-box" href="/"
+                
+                
+                id="home">
+								<i class='fas fa-clock fa-fw'></i>&nbsp;近期文章
+							</a>
+            </li>
+          
+            <li>
+							<a class="nav flat-box" href="/archives/"
+                
+                  rel="nofollow"
+                
+                
+                id="archives">
+								<i class='fas fa-archive fa-fw'></i>&nbsp;文章归档
+							</a>
+            </li>
+          
+       
+      </ul>
+		</nav>
+    </header>
+	</aside>
+<script>setLoadingBarProgress(40);</script>
+
+  </div>
+
+
+  <div class="l_body">
+    <div class='body-wrapper'>
+      <div class='l_main'>
+  
+
+  <article id="post" class="post white-box article-type-post" itemscope itemprop="blogPost">
+    
+
+
+  <section class='meta'>
+    
+    
+    <div class="meta" id="header-meta">
+      
+        
+  
+    <h1 class="title">
+      <a href="/start/vue-create-dm/">
+        使用函数优雅地创建弹框抽屉
+      </a>
+    </h1>
+  
+
+
+      
+      <div class='new-meta-box'>
+        
+          
+        
+          
+            
+
+          
+        
+          
+            <div class="new-meta-item date">
+  <a class='notlink'>
+    <i class="fas fa-calendar-alt" aria-hidden="true"></i>
+    <p>2020-09-26</p>
+  </a>
+</div>
+
+          
+        
+          
+            
+  
+  <div class='new-meta-item category'>
+    <a href='/categories/vue/' rel="nofollow">
+      <i class="fas fa-folder-open" aria-hidden="true"></i>
+      <p>vue</p>
+    </a>
+  </div>
+
+
+          
+        
+          
+            
+  
+
+          
+        
+          
+            
+
+          
+        
+      </div>
+      
+        <hr>
+      
+    </div>
+  </section>
+
+
+    <section class="article typo">
+      <div class="article-entry" itemprop="articleBody">
+        <p>使用函数优雅地创建 <a href="https://www.antdv.com/docs/vue/introduce-cn/" title="ant-design-vue" target="_blank" rel="noopener">ant-design-vue</a>、<a href="https://www.iviewui.com/" title="view-design" target="_blank" rel="noopener">view-design</a>、<a href="https://element.eleme.cn/#/zh-CN" title="ElementUI" target="_blank" rel="noopener">ElementUI</a> 的 Drawer 和 Modal</p>
+<h2 id="例子"><a href="#例子" class="headerlink" title="例子"></a>例子</h2><p><a href="https://hzyhbk.github.io/vue-create-dm/example/#/antd" title="普通项目中使用vue-create-dm例子在线地址">vue-create-dm使用例子在线地址</a></p>
+<p>代码见 <code>example</code> 文件夹<br><a id="more"></a></p>
+<h2 id="特性"><a href="#特性" class="headerlink" title="特性"></a>特性</h2><ul>
+<li>通过函数来创建<code>Modal</code>或<code>Drawer</code>组件</li>
+<li><code>Modal</code>、<code>Drawer</code>的内容子组件的<code>created</code>、<code>mounted</code>、<code>destoryed</code>生命周期按照正常逻辑触发</li>
+<li><code>Modal</code>、<code>Drawer</code>支持分别注册全局头部组件（需要接收名为 <code>title</code> 的 <code>props</code>）</li>
+<li>支持传入 <code>title</code>、<code>content</code>、<code>footer</code> 插槽</li>
+<li>支持<code>Modal</code>、<code>Drawer</code>与父组件通信</li>
+<li>支持子组件获取 <code>this.$store</code> 和 <code>this.$router</code></li>
+<li>支持传入路由来匹配<strong>内容</strong>组件,<ul>
+<li>若传入<code>url</code>比如 <a href="https://www.baidu.com" target="_blank" rel="noopener">https://www.baidu.com</a> ,则以 <code>iframe</code>形式展示</li>
+<li>若传入 <code>相对路由</code>（比如 /foo, /bar）,则获取匹配的路由组件展示</li>
+</ul>
+</li>
+<li>支持<strong>微前端中跨项目相互调用</strong></li>
+</ul>
+<h2 id="为什么"><a href="#为什么" class="headerlink" title="为什么"></a>为什么</h2><p>在使用弹窗抽屉组件的过程中,你是否也曾遇到过以下场景：</p>
+<ol>
+<li><p>一个项目里有许多的弹窗和抽屉类型的交互,有时甚至一个页面组件里就有许多弹窗和抽屉组件,原生的使用方式是先在父组件中写好弹框抽屉组件,然后通过<code>visible</code>变量来控制弹窗的显示隐藏,当弹窗抽屉一多,看着各种<code>xxVisible</code>让人感觉很混乱</p>
+</li>
+<li><p>弹窗抽屉内包含的子组件的生命周期并没有按我们预想的逻辑触发,我们想打开弹窗抽屉的时候才触发内容子组件的<code>created</code>和<code>mounted</code>生命周期,然而实际上却并不是；我们希望关闭的时候可以调用子组件的<code>destoryed</code>生命周期,可是目前的UI框架大多只是把组件设置为<code>display:none</code>了,并没有完全卸载子组件,</p>
+</li>
+<li><p><code>antd</code>提供了<code>destroyOnClose</code>参数支持关闭时销毁子元素,但也没法解决上面说到的1,2两点问题组件库虽然也有提供通过函数打开弹窗的方法,但那些都是一些简单的弹框,可配置的参数不多,自由度也不够高</p>
+</li>
+</ol>
+<p>因此就有了<code>vue-create-dm</code>这个库,<code>dm</code>就是分别取了<code>Drawer</code>和<code>Modal</code>的第一个字母组合在一起（为什么不是<code>md</code>呢,因为<code>md</code>是<code>markdown</code>的缩写…）目前内置支持了<code>ant-design-vue</code>、<code>view-design</code>和<code>ElementUI</code>三个组件库的的弹框抽屉组件,并且提供了各种工具函数可以自己支持其他组件库的弹框抽屉组件</p>
+<h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yarn add vue-create-dm</span><br></pre></td></tr></table></figure>
+<h3 id="统一注册"><a href="#统一注册" class="headerlink" title="统一注册"></a>统一注册</h3><p><strong>注意1</strong><br>如果要在子组件内获取 <code>this.$store</code> 和 <code>this.$router</code> 请把 <code>VueCreateDM</code> 的注册放到 <code>Vuex</code> 和 <code>VueRouter</code> 实例生成之后,并且传入这两个实例</p>
+<p><strong>注意2</strong><br>如果要自定义全局头部组件,请传入<code>modalGlobalHeader</code>,<code>drawerGlobalHeader</code>这两个参数,分别对应<code>Modal</code>组件的全局头部和<code>Drawer</code>组件的全局头部</p>
+<p>下面演示如何进行全量注册：<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> Vue <span class="keyword">from</span> <span class="string">'vue'</span>;</span><br><span class="line"><span class="keyword">import</span> VueCreateDM <span class="keyword">from</span> <span class="string">'vue-create-dm'</span>;</span><br><span class="line"><span class="keyword">import</span> &#123; Modal <span class="keyword">as</span> antdModal, Drawer <span class="keyword">as</span> antdDrawer &#125; <span class="keyword">from</span> <span class="string">'ant-design-vue'</span>;</span><br><span class="line"><span class="keyword">import</span> &#123; Modal <span class="keyword">as</span> viewModal, Drawer <span class="keyword">as</span> viewDrawer &#125; <span class="keyword">from</span> <span class="string">'view-design'</span>;</span><br><span class="line"><span class="keyword">import</span> &#123; Dialog <span class="keyword">as</span> eleModal, Drawer <span class="keyword">as</span> eleDrawer &#125; <span class="keyword">from</span> <span class="string">'element-ui'</span>;</span><br><span class="line"><span class="keyword">import</span> store <span class="keyword">from</span> <span class="string">'./store'</span></span><br><span class="line"><span class="keyword">import</span> router <span class="keyword">from</span> <span class="string">'./router'</span>;</span><br><span class="line"><span class="keyword">import</span> modalGlobalHeader <span class="keyword">from</span> <span class="string">'./components/modalGlobalHeader'</span>;</span><br><span class="line"><span class="keyword">import</span> drawerGlobalHeader <span class="keyword">from</span> <span class="string">'./components/drawerGlobalHeader'</span>;</span><br><span class="line"></span><br><span class="line">Vue.use(VueCreateDM, &#123;</span><br><span class="line">  antdModal,</span><br><span class="line">  antdDrawer,</span><br><span class="line">  viewModal,</span><br><span class="line">  viewDrawer,</span><br><span class="line">  eleModal,</span><br><span class="line">  eleDrawer,</span><br><span class="line">  store,</span><br><span class="line">  router,</span><br><span class="line">  modalGlobalHeader,</span><br><span class="line">  drawerGlobalHeader,</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure></p>
+<h3 id="单个注册"><a href="#单个注册" class="headerlink" title="单个注册"></a>单个注册</h3><p><strong>注意1</strong><br>如果要在子组件内获取 <code>this.$store</code> 和 <code>this.$router</code> 请把 <code>VueCreateDM</code> 的注册放到 <code>Vuex</code> 和 <code>VueRouter</code> 实例生成之后,并且传入这两个实例</p>
+<p><strong>注意2</strong><br>如果要自定义全局头部组件,请传入<code>globalHeader</code>参数</p>
+<p>下面演示如何单个注册,<strong>其中<code>component</code>属性必传</strong>,其余几个都是可选参数：<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> Vue <span class="keyword">from</span> <span class="string">'vue'</span>;</span><br><span class="line"><span class="keyword">import</span> store <span class="keyword">from</span> <span class="string">'./store'</span>;</span><br><span class="line"><span class="keyword">import</span> router <span class="keyword">from</span> <span class="string">'./router'</span>;</span><br><span class="line"><span class="keyword">import</span> &#123; createAntdDrawer &#125; <span class="keyword">from</span> <span class="string">'vue-create-dm'</span>;</span><br><span class="line"><span class="keyword">import</span> &#123; Drawer &#125; <span class="keyword">from</span> <span class="string">'ant-design-vue'</span>;</span><br><span class="line"><span class="keyword">import</span> globalHeader <span class="keyword">from</span> <span class="string">'../components/globalHeader'</span>;</span><br><span class="line"></span><br><span class="line">Vue.use(createAntdDrawer, &#123;</span><br><span class="line">  component: Drawer,</span><br><span class="line">  router, <span class="comment">// 子组件需要用到 this.$router 就传</span></span><br><span class="line">  store <span class="comment">// 子组件需要用到 this.$store 就传</span></span><br><span class="line">  globalHeader, <span class="comment">// 全局配置头部组件</span></span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure></p>
+<h2 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h2><h3 id="创建抽屉"><a href="#创建抽屉" class="headerlink" title="创建抽屉"></a>创建抽屉</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">this</span>.$createAntdDrawer(options, arg1, arg2);</span><br><span class="line"><span class="keyword">this</span>.$createViewDrawer(options, arg1, arg2);</span><br><span class="line"><span class="keyword">this</span>.$createEleDrawer(options, arg1, arg2);</span><br></pre></td></tr></table></figure>
+<h4 id="代码示例"><a href="#代码示例" class="headerlink" title="代码示例"></a>代码示例</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">this</span>.$createAntdDrawer(&#123;</span><br><span class="line">  drawerProps: &#123;</span><br><span class="line">    title: <span class="string">'标题'</span>,</span><br><span class="line">    width: <span class="string">'500px'</span>,</span><br><span class="line">    mask: <span class="literal">false</span>,</span><br><span class="line">  &#125;,</span><br><span class="line">  content: &#123;</span><br><span class="line">    template: HelloWorld,</span><br><span class="line">    props: &#123;</span><br><span class="line">      msg: <span class="string">'Welcome to Your Vue.js App'</span>,</span><br><span class="line">    &#125;,</span><br><span class="line">  &#125;,</span><br><span class="line">  beforeClose: <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'我要关闭了'</span>);</span><br><span class="line">  &#125;,</span><br><span class="line">  afterClose: <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'我已经关闭了'</span>);</span><br><span class="line">  &#125;,</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<h3 id="创建弹框"><a href="#创建弹框" class="headerlink" title="创建弹框"></a>创建弹框</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">this</span>.$createAntdModal(options, arg1, arg2);</span><br><span class="line"><span class="keyword">this</span>.$createViewModal(options, arg1, arg2);</span><br><span class="line"><span class="keyword">this</span>.$createEleModal(options, arg1, arg2);</span><br></pre></td></tr></table></figure>
+<h4 id="代码示例-1"><a href="#代码示例-1" class="headerlink" title="代码示例"></a>代码示例</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">this</span>.$createAntdModal(&#123;</span><br><span class="line">  modalProps: &#123;</span><br><span class="line">    title: <span class="string">'标题'</span>,</span><br><span class="line">    width: <span class="string">'500px'</span>,</span><br><span class="line">    mask: <span class="literal">false</span>,</span><br><span class="line">  &#125;,</span><br><span class="line">  content: &#123;</span><br><span class="line">    template: HelloWorld,</span><br><span class="line">    props: &#123;</span><br><span class="line">      msg: <span class="string">'Welcome to Your Vue.js App'</span>,</span><br><span class="line">    &#125;,</span><br><span class="line">  &#125;,</span><br><span class="line">  beforeClose: <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'我要关闭了'</span>);</span><br><span class="line">  &#125;,</span><br><span class="line">  afterClose: <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'我已经关闭了'</span>);</span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="keyword">async</span> onOk() &#123;</span><br><span class="line">    <span class="keyword">const</span> res = <span class="keyword">await</span> <span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function">(<span class="params">resolve</span>) =&gt;</span> &#123;</span><br><span class="line">      setTimeout(<span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="string">'点了确定'</span>);</span><br><span class="line">        resolve(<span class="literal">false</span>);</span><br><span class="line">      &#125;, <span class="number">3000</span>);</span><br><span class="line">    &#125;);</span><br><span class="line">    <span class="keyword">return</span> res;</span><br><span class="line">  &#125;,</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<h2 id="微前端中使用"><a href="#微前端中使用" class="headerlink" title="微前端中使用"></a>微前端中使用</h2><p>基于single-spa, vue-create-dm也支持在微前端项目中<strong>跨项目调用抽屉、弹框</strong></p>
+<blockquote>
+<h3 id="前提条件"><a href="#前提条件" class="headerlink" title="前提条件"></a>前提条件</h3><ol>
+<li>需要互相调用抽屉、弹框的子项目<strong>必须</strong>都是 vue 技术栈</li>
+<li>并且都安装注册了vue-create-dm</li>
+<li>要跨项目调用的页面注册成路由页面</li>
+</ol>
+</blockquote>
+<h3 id="示例项目"><a href="#示例项目" class="headerlink" title="示例项目"></a>示例项目</h3><p>参考 <a href="https://github.com/hzyhbk/vue-create-dm/tree/master/micro-frontend-example" title="微前端中使用vue-create-dm例子在线地址" target="_blank" rel="noopener">micro-frontend-example</a> 文件夹</p>
+<h3 id="主项目使用"><a href="#主项目使用" class="headerlink" title="主项目使用"></a>主项目使用</h3><ol>
+<li><p>注册子应用的方式需要改成config配置文件的方式。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> config = [&#123;</span><br><span class="line">  name: <span class="string">'sub1'</span>,</span><br><span class="line">  app: <span class="function"><span class="params">()</span> =&gt;</span> loadSubApp(<span class="string">'sub1'</span>, <span class="string">'http://localhost:8081/manifest-initial.json'</span>),</span><br><span class="line">  activeWhen: <span class="function">(<span class="params">location</span>) =&gt;</span> location.pathname.startsWith(<span class="string">'/sub1'</span>),</span><br><span class="line">  customProps: &#123;</span><br><span class="line">    domElement: <span class="string">'#app-sub-wrapper'</span>,</span><br><span class="line">  &#125;,</span><br><span class="line">&#125;]</span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> config;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>main.js加入如下代码</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; listenOpenDrawerAction, triggerOpenDrawerAction &#125; <span class="keyword">from</span> <span class="string">'vue-create-dm'</span>;</span><br><span class="line"><span class="keyword">import</span> config <span class="keyword">from</span> <span class="string">'./micro-frontend/config/config'</span>;</span><br><span class="line"><span class="comment">// 监听打开抽屉事件</span></span><br><span class="line">listenOpenDrawerAction(config, <span class="string">'$createAntdDrawer'</span>);</span><br><span class="line"><span class="comment">// 子项目调用打开抽屉的函数</span></span><br><span class="line"><span class="built_in">window</span>.triggerOpenDrawerAction = triggerOpenDrawerAction;</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<h3 id="子项目使用"><a href="#子项目使用" class="headerlink" title="子项目使用"></a>子项目使用</h3><ol>
+<li><p>除了 single-spa 要求导出的生命周期方法之外，子项目的<code>main.js</code>需要额外导出一个<code>router</code>实例和一个空的<code>vue</code>实例。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> Vue <span class="keyword">from</span> <span class="string">'vue'</span>;</span><br><span class="line"><span class="keyword">import</span> router <span class="keyword">from</span> <span class="string">'./router'</span>;</span><br><span class="line"><span class="keyword">import</span> store <span class="keyword">from</span> <span class="string">'./store'</span>;</span><br><span class="line"><span class="keyword">import</span> VueCreateDM <span class="keyword">from</span> <span class="string">'vue-create-dm'</span>;</span><br><span class="line"><span class="keyword">import</span> &#123; Modal <span class="keyword">as</span> antdModal, Drawer <span class="keyword">as</span> antdDrawer &#125; <span class="keyword">from</span> <span class="string">'ant-design-vue'</span>;</span><br><span class="line"></span><br><span class="line">Vue.use(VueCreateDM, &#123;</span><br><span class="line">  antdDrawer,</span><br><span class="line">  antdModal,</span><br><span class="line">  router,</span><br><span class="line">  store,</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">const</span> bootstrap = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;...&#125;</span><br><span class="line"><span class="keyword">export</span> <span class="keyword">const</span> mount = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;...&#125;</span><br><span class="line"><span class="keyword">export</span> <span class="keyword">const</span> unmount = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;...&#125;</span><br><span class="line"><span class="keyword">export</span> <span class="keyword">const</span> update = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;...&#125;</span><br><span class="line"><span class="comment">// 额外导出</span></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">const</span> $router = router;</span><br><span class="line"><span class="keyword">export</span> <span class="keyword">const</span> $Vue = <span class="keyword">new</span> Vue();</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>需要被跨项目调用的组件，请在子项目的VueRouter路由配置文件中声明</p>
+</li>
+<li>子项目<strong>触发</strong><code>openDrawer</code>、<code>openModal</code>事件<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">window</span>.triggerOpenDrawerAction(&#123;</span><br><span class="line">  appName: <span class="string">'sub2'</span>,</span><br><span class="line">  path: <span class="string">'/about'</span>,</span><br><span class="line">  drawerProps: &#123;</span><br><span class="line">    title: <span class="string">'子应用二抽屉'</span>,</span><br><span class="line">    width: <span class="string">'50%'</span>,</span><br><span class="line">  &#125;,</span><br><span class="line">  content: &#123;&#125;,</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<p><br></p>
+<p>PS: 如果觉得不错, 欢迎前往 Github <a href="https://github.com/hzyhbk/vue-create-dm" title="vue-create-dm Github地址" target="_blank" rel="noopener">vue-create-dm</a> 点个star</p>
+<p>友情链接：</p>
+<ul>
+<li><a href="https://hzyhbk.github.io/vue-create-dm" title="vue-create-dm文档地址">vue-create-dm文档地址</a></li>
+<li><a href="https://hzyhbk.github.io/react-create-dm" title="react-create-dm文档地址">react-create-dm文档地址</a></li>
+</ul>
+
+      </div>
+      
+      
+        <br>
+        
+
+
+  <section class='meta' id="footer-meta">
+    <div class='new-meta-box'>
+      
+        
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-09-26T16:20:10+08:00">
+  <a class='notlink'>
+    <i class="fas fa-clock" aria-hidden="true"></i>
+    <p>更新于 2020年9月26日</p>
+  </a>
+</div>
+
+        
+      
+        
+          
+  
+  <div class="new-meta-item meta-tags"><a class="tag" href="/tags/javascript/" rel="nofollow"><i class="fas fa-tag" aria-hidden="true"></i><p>javascript</p></a></div> <div class="new-meta-item meta-tags"><a class="tag" href="/tags/vue/" rel="nofollow"><i class="fas fa-tag" aria-hidden="true"></i><p>vue</p></a></div>
+
+
+        
+      
+        
+          
+  <div class="new-meta-item share -mob-share-list">
+  <div class="-mob-share-list share-body">
+    
+      
+        <a class="-mob-share-qq" title="QQ好友" rel="external nofollow noopener noreferrer"
+          
+          href="http://connect.qq.com/widget/shareqq/index.html?url=http://hzyhbk.github.io/start/vue-create-dm/&title=使用函数优雅地创建弹框抽屉 | hzyhbk&summary=使用函数优雅地创建 ant-design-vue、view-design、ElementUI 的 Drawer 和 Modal
+例子vue-create-dm使用例子在线地址
+代码见 example 文件夹"
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/xaoxuu/assets@19.1.9/logo/128/qq.png">
+          
+        </a>
+      
+    
+      
+        <a class="-mob-share-qzone" title="QQ空间" rel="external nofollow noopener noreferrer"
+          
+          href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=http://hzyhbk.github.io/start/vue-create-dm/&title=使用函数优雅地创建弹框抽屉 | hzyhbk&summary=使用函数优雅地创建 ant-design-vue、view-design、ElementUI 的 Drawer 和 Modal
+例子vue-create-dm使用例子在线地址
+代码见 example 文件夹"
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/xaoxuu/assets@19.1.9/logo/128/qzone.png">
+          
+        </a>
+      
+    
+      
+        <a class="-mob-share-weibo" title="微博" rel="external nofollow noopener noreferrer"
+          
+          href="http://service.weibo.com/share/share.php?url=http://hzyhbk.github.io/start/vue-create-dm/&title=使用函数优雅地创建弹框抽屉 | hzyhbk&summary=使用函数优雅地创建 ant-design-vue、view-design、ElementUI 的 Drawer 和 Modal
+例子vue-create-dm使用例子在线地址
+代码见 example 文件夹"
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/xaoxuu/assets@19.1.9/logo/128/weibo.png">
+          
+        </a>
+      
+    
+  </div>
+</div>
+
+
+
+        
+      
+    </div>
+  </section>
+
+
+      
+      
+          <div class="prev-next">
+              
+              
+                  <section class="next">
+                      <span class="art-item-right" aria-hidden="true">
+                          <h6>下一页&nbsp;<i class="fas fa-chevron-right" aria-hidden="true"></i></h6>
+                          <h4>
+                              <a href="/start/learn-promise-then/" rel="prev" title="彻底理解Promise.then回调的执行顺序">
+                                  
+                                      彻底理解Promise.then回调的执行顺序
+                                  
+                              </a>
+                          </h4>
+                          
+                              
+                              <h6 class="tags">
+                                  <a class="tag" href="/tags/javascript/"><i class="fas fa-tag fa-fw" aria-hidden="true"></i> javascript</a> <a class="tag" href="/tags/promise/"><i class="fas fa-tag fa-fw" aria-hidden="true"></i> promise</a>
+                              </h6>
+                          
+                      </span>
+                  </section>
+              
+          </div>
+      
+    </section>
+  </article>
+
+
+
+  <!-- 显示推荐文章和评论 -->
+
+
+
+  
+
+
+
+
+
+
+<!-- 根据页面mathjax变量决定是否加载MathJax数学公式js -->
+
+
+
+  <script>
+    window.subData = {
+      title: '使用函数优雅地创建弹框抽屉',
+      tools: true
+    }
+  </script>
+
+
+</div>
+<aside class='l_side'>
+  
+    
+    
+      
+      
+        
+          
+          
+            
+              <section class='widget author'>
+  <div class='content pure'>
+    
+      <div class='avatar'>
+        <img class='avatar' src='/images/avatar.jpg'/>
+      </div>
+    
+    
+      <div class='text'>
+        
+        
+        
+          <p><span id="jinrishici-sentence">hzyhbk</span></p>
+          <script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
+        
+      </div>
+    
+    
+      <div class="social-wrapper">
+        
+          
+            <a href="/atom.xml"
+              class="social fas fa-rss flat-btn"
+              target="_blank"
+              rel="external nofollow noopener noreferrer">
+            </a>
+          
+        
+          
+            <a href="mailto:hzyhbk@163.com"
+              class="social fas fa-envelope flat-btn"
+              target="_blank"
+              rel="external nofollow noopener noreferrer">
+            </a>
+          
+        
+          
+            <a href="https://github.com/hzyhbk"
+              class="social fab fa-github flat-btn"
+              target="_blank"
+              rel="external nofollow noopener noreferrer">
+            </a>
+          
+        
+          
+            <a href="https://weibo.com/hzyhbk"
+              class="social fab fa-weibo flat-btn"
+              target="_blank"
+              rel="external nofollow noopener noreferrer">
+            </a>
+          
+        
+      </div>
+    
+  </div>
+</section>
+
+            
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+      
+        
+          
+          
+        
+          
+          
+        
+          
+          
+            
+              
+  <section class='widget toc-wrapper'>
+    
+<header class='pure'>
+  <div><i class="fas fa-list fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;本文目录</div>
+  
+    <!-- <div class='wrapper'><a class="s-toc rightBtn" rel="external nofollow noopener noreferrer" href="javascript:void(0)"><i class="fas fa-thumbtack fa-fw"></i></a></div> -->
+  
+</header>
+
+    <div class='content pure'>
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#例子"><span class="toc-text">例子</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#特性"><span class="toc-text">特性</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#为什么"><span class="toc-text">为什么</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#安装"><span class="toc-text">安装</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#统一注册"><span class="toc-text">统一注册</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#单个注册"><span class="toc-text">单个注册</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#使用"><span class="toc-text">使用</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#创建抽屉"><span class="toc-text">创建抽屉</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#代码示例"><span class="toc-text">代码示例</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#创建弹框"><span class="toc-text">创建弹框</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#代码示例-1"><span class="toc-text">代码示例</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#微前端中使用"><span class="toc-text">微前端中使用</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#前提条件"><span class="toc-text">前提条件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#示例项目"><span class="toc-text">示例项目</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#主项目使用"><span class="toc-text">主项目使用</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#子项目使用"><span class="toc-text">子项目使用</span></a></li></ol></li></ol>
+    </div>
+  </section>
+
+
+            
+          
+        
+          
+          
+        
+          
+          
+        
+      
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+      
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+            
+              
+  <section class='widget category'>
+    
+<header class='pure'>
+  <div><i class="fas fa-folder-open fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;文章分类</div>
+  
+    <a class="rightBtn"
+    
+      rel="nofollow"
+    
+    
+    href="/categories/"
+    title="/categories/">
+    <i class="fas fa-expand-arrows-alt fa-fw"></i></a>
+  
+</header>
+
+    <div class='content pure'>
+      <ul class="entry">
+        
+          <li><a class="flat-box" title="/categories/js基础/" href="/categories/js基础/"><div class='name'>js基础</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box" title="/categories/vue/" href="/categories/vue/"><div class='name'>vue</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box" title="/categories/web前端/" href="/categories/web前端/"><div class='name'>web前端</div><div class='badge'>(3)</div></a></li>
+        
+          <li><a class="flat-box" title="/categories/生活/" href="/categories/生活/"><div class='name'>生活</div><div class='badge'>(1)</div></a></li>
+        
+      </ul>
+    </div>
+  </section>
+
+
+            
+          
+        
+          
+          
+        
+      
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+            
+              
+  <section class='widget tagcloud'>
+    
+<header class='pure'>
+  <div><i class="fas fa-tags fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;热门标签</div>
+  
+    <a class="rightBtn"
+    
+      rel="nofollow"
+    
+    
+    href="/tags/"
+    title="/tags/">
+    <i class="fas fa-expand-arrows-alt fa-fw"></i></a>
+  
+</header>
+
+    <div class='content pure'>
+      <a href="/tags/antd-table/" style="font-size: 14px; color: #999">antd-table</a> <a href="/tags/echarts-for-react/" style="font-size: 14px; color: #999">echarts-for-react</a> <a href="/tags/hello-world/" style="font-size: 14px; color: #999">hello-world</a> <a href="/tags/javascript/" style="font-size: 24px; color: #555">javascript</a> <a href="/tags/js-xlsx/" style="font-size: 14px; color: #999">js-xlsx</a> <a href="/tags/promise/" style="font-size: 14px; color: #999">promise</a> <a href="/tags/react/" style="font-size: 14px; color: #999">react</a> <a href="/tags/vue/" style="font-size: 14px; color: #999">vue</a>
+    </div>
+  </section>
+
+
+            
+          
+        
+      
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+      
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+      
+    
+
+  
+</aside>
+
+<footer id="footer" class="clearfix">
+  
+  
+    <div class="social-wrapper">
+      
+        
+          <a href="/atom.xml"
+            class="social fas fa-rss flat-btn"
+            target="_blank"
+            rel="external nofollow noopener noreferrer">
+          </a>
+        
+      
+        
+          <a href="mailto:hzyhbk@163.com"
+            class="social fas fa-envelope flat-btn"
+            target="_blank"
+            rel="external nofollow noopener noreferrer">
+          </a>
+        
+      
+        
+          <a href="https://github.com/hzyhbk"
+            class="social fab fa-github flat-btn"
+            target="_blank"
+            rel="external nofollow noopener noreferrer">
+          </a>
+        
+      
+        
+          <a href="https://weibo.com/hzyhbk"
+            class="social fab fa-weibo flat-btn"
+            target="_blank"
+            rel="external nofollow noopener noreferrer">
+          </a>
+        
+      
+    </div>
+  
+  <br>
+  <div><p>博客内容遵循 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">署名-非商业性使用-相同方式共享 4.0 国际 (CC BY-NC-SA 4.0) 协议</a></p>
+</div>
+  <div>
+    本站使用
+    <a href="https://xaoxuu.com/wiki/material-x/" target="_blank" class="codename">Material X</a>
+    作为主题
+    
+      ，
+      总访问量为
+      <span id="busuanzi_value_site_pv"><i class="fas fa-spinner fa-spin fa-fw" aria-hidden="true"></i></span>
+      次
+    
+    。
+  </div>
+</footer>
+<script>setLoadingBarProgress(80);</script>
+
+
+      <script>setLoadingBarProgress(60);</script>
+    </div>
+    <a class="s-top fas fa-arrow-up fa-fw" href='javascript:void(0)'></a>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script>
+
+  <script>
+    var GOOGLE_CUSTOM_SEARCH_API_KEY = "";
+    var GOOGLE_CUSTOM_SEARCH_ENGINE_ID = "";
+    var ALGOLIA_API_KEY = "";
+    var ALGOLIA_APP_ID = "";
+    var ALGOLIA_INDEX_NAME = "";
+    var AZURE_SERVICE_NAME = "";
+    var AZURE_INDEX_NAME = "";
+    var AZURE_QUERY_KEY = "";
+    var BAIDU_API_ID = "";
+    var SEARCH_SERVICE = "hexo" || "hexo";
+    var ROOT = "/"||"/";
+    if(!ROOT.endsWith('/'))ROOT += '/';
+  </script>
+
+<script src="//instant.page/1.2.2" type="module" integrity="sha384-2xV8M5griQmzyiY3CDqh1dn4z3llDVqZDqzjzcY+jCBCk/a5fXJmuZ/40JJAPeoU"></script>
+
+
+  <script async src="https://cdn.jsdelivr.net/npm/scrollreveal@4.0.5/dist/scrollreveal.min.js"></script>
+  <script type="text/javascript">
+    $(function() {
+      const $reveal = $('.reveal');
+      if ($reveal.length === 0) return;
+      const sr = ScrollReveal({ distance: 0 });
+      sr.reveal('.reveal');
+    });
+  </script>
+
+
+  <script src="https://cdn.jsdelivr.net/npm/node-waves@0.7.6/dist/waves.min.js"></script>
+  <script type="text/javascript">
+    $(function() {
+      Waves.attach('.flat-btn', ['waves-button']);
+      Waves.attach('.float-btn', ['waves-button', 'waves-float']);
+      Waves.attach('.float-btn-light', ['waves-button', 'waves-float', 'waves-light']);
+      Waves.attach('.flat-box', ['waves-block']);
+      Waves.attach('.float-box', ['waves-block', 'waves-float']);
+      Waves.attach('.waves-image');
+      Waves.init();
+    });
+  </script>
+
+
+  <script async src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-busuanzi@2.3/js/busuanzi.pure.mini.js"></script>
+
+
+
+
+  
+  
+  
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-backstretch/2.0.4/jquery.backstretch.min.js"></script>
+    <script type="text/javascript">
+      $(function(){
+        if ('.cover') {
+          $('.cover').backstretch(
+          ["https://img.vim-cn.com/29/91197b04c13f512f734a76d4ac422d89dbe229.jpg"],
+          {
+            duration: "6000",
+            fade: "2500"
+          });
+        } else {
+          $.backstretch(
+          ["https://img.vim-cn.com/29/91197b04c13f512f734a76d4ac422d89dbe229.jpg"],
+          {
+            duration: "6000",
+            fade: "2500"
+          });
+        }
+      });
+    </script>
+  
+
+
+
+
+
+
+
+
+
+
+
+  <script src="/js/app.js"></script>
+
+
+  <script src="/js/search.js"></script>
+
+
+
+
+<!-- 复制 -->
+<script src="https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js"></script>
+<script>
+  let COPY_SUCCESS = "复制成功";
+  let COPY_FAILURE = "复制失败";
+  /*页面载入完成后，创建复制按钮*/
+  !function (e, t, a) {
+    /* code */
+    var initCopyCode = function(){
+      var copyHtml = '';
+      copyHtml += '<button class="btn-copy" data-clipboard-snippet="">';
+      copyHtml += '  <i class="fa fa-copy"></i><span>复制</span>';
+      copyHtml += '</button>';
+      $(".highlight .code pre").before(copyHtml);
+      var clipboard = new ClipboardJS('.btn-copy', {
+        target: function(trigger) {
+          return trigger.nextElementSibling;
+        }
+      });
+
+      clipboard.on('success', function(e) {
+        //您可以加入成功提示
+        console.info('Action:', e.action);
+        console.info('Text:', e.text);
+        console.info('Trigger:', e.trigger);
+        success_prompt(COPY_SUCCESS);
+        e.clearSelection();
+      });
+      clipboard.on('error', function(e) {
+        //您可以加入失败提示
+        console.error('Action:', e.action);
+        console.error('Trigger:', e.trigger);
+        fail_prompt(COPY_FAILURE);
+      });
+    }
+    initCopyCode();
+
+  }(window, document);
+
+  /**
+   * 弹出式提示框，默认1.5秒自动消失
+   * @param message 提示信息
+   * @param style 提示样式，有alert-success、alert-danger、alert-warning、alert-info
+   * @param time 消失时间
+   */
+  var prompt = function (message, style, time)
+  {
+      style = (style === undefined) ? 'alert-success' : style;
+      time = (time === undefined) ? 1500 : time*1000;
+      $('<div>')
+          .appendTo('body')
+          .addClass('alert ' + style)
+          .html(message)
+          .show()
+          .delay(time)
+          .fadeOut();
+  };
+
+  // 成功提示
+  var success_prompt = function(message, time)
+  {
+      prompt(message, 'alert-success', time);
+  };
+
+  // 失败提示
+  var fail_prompt = function(message, time)
+  {
+      prompt(message, 'alert-danger', time);
+  };
+
+  // 提醒
+  var warning_prompt = function(message, time)
+  {
+      prompt(message, 'alert-warning', time);
+  };
+
+  // 信息提示
+  var info_prompt = function(message, time)
+  {
+      prompt(message, 'alert-info', time);
+  };
+
+</script>
+
+
+<!-- fancybox -->
+<script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
+<script>
+  let LAZY_LOAD_IMAGE = "";
+  $(".article-entry").find("fancybox").find("img").each(function () {
+      var element = document.createElement("a");
+      $(element).attr("data-fancybox", "gallery");
+      $(element).attr("href", $(this).attr("src"));
+      /* 图片采用懒加载处理时,
+       * 一般图片标签内会有个属性名来存放图片的真实地址，比如 data-original,
+       * 那么此处将原本的属性名src替换为对应属性名data-original,
+       * 修改如下
+       */
+       if (LAZY_LOAD_IMAGE) {
+         $(element).attr("href", $(this).attr("data-original"));
+       }
+      $(this).wrap(element);
+  });
+</script>
+
+
+
+
+
+  <script>setLoadingBarProgress(100);</script>
+</body>
+</html>
